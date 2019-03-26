@@ -1,30 +1,15 @@
-%% Time-stamp: <2004-04-27 18:44:11 Boris Aronov>
-%% File: polythesis.cls
-%% Author: Boris Aronov
-%% Date: 2004-04-27
-%% 
-%% Class file for Polytechnic University PhD thesis. 
-%% Based on the standard LaTeX2e book style.
-%% Basically just sets page style and headers and footers and
-%% processes options (none of which you should change from the
-%% defaults for the official version).  Not tested very much.
-
-%% <2004-04-27 17:23:43 Boris Aronov>  Updated to new (3.2) version of
-%% geometry.  Else bad things happen.  Should add option to see the
-%% page layout for testing.
-
 %% Identification
 
 \NeedsTeXFormat{LaTeX2e} % do not need any particular format that I
                          % know of.
 
-\ProvidesClass{polythesis}[2000/07/25 v0.010 beta Polytechnic PhD
-thesis class by BA]
+\ProvidesClass{tandon_thesis}[2019/03/25 NYU Tandon PhD
+thesis class, originally Boris Aronov, modified Crystal Butler]
 
 %% Refuse to run in compatibility mode:
 \if@compatibility
-  \ClassError{polythesis}{LaTeX 2.09 compatibility not supported}
-    {You are trying to use polythesis.cls in LaTeX 2.09 compatibility
+  \ClassError{tandon_thesis}{LaTeX 2.09 compatibility not supported}
+    {You are trying to use tandon_thesis.cls in LaTeX 2.09 compatibility
   mode. This will not work.}
 \else
 \fi
@@ -68,51 +53,12 @@ thesis class by BA]
 \fi
 
 \if@twoside
-   \ClassWarning{polythesis}{We do not support two-sided formatting
+   \ClassWarning{tandon_thesis}{We do not support two-sided formatting
    (yet?)}
 \else
-   \ClassWarning{polythesis}{We seem to be working one-sided now!}
+   \ClassWarning{tandon_thesis}{We seem to be working one-sided now!}
 \fi
 
-
-%% Commented out--using fancyhrd
-
-% %%%%%% Some code that depends on two-sidedness, copied out of book.cls
-% %%%%%% Not clear it we need to re-run it...
-% \if@twoside
-%   \def\ps@headings{%
-%       \let\@oddfoot\@empty\let\@evenfoot\@empty
-%       \def\@evenhead{\thepage\hfil\slshape\leftmark}%
-%       \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-%       \let\@mkboth\markboth
-%     \def\chaptermark##1{%
-%       \markboth {\MakeUppercase{%
-%         \ifnum \c@secnumdepth >\m@ne
-%           \if@mainmatter
-%             \@chapapp\ \thechapter. \ %
-%           \fi
-%         \fi
-%         ##1}}{}}%
-%     \def\sectionmark##1{%
-%       \markright {\MakeUppercase{%
-%         \ifnum \c@secnumdepth >\z@
-%           \thesection. \ %
-%         \fi
-%         ##1}}}}
-% \else
-%   \def\ps@headings{%
-%     \let\@oddfoot\@empty
-%     \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-%     \let\@mkboth\markboth
-%     \def\chaptermark##1{%
-%       \markright {\MakeUppercase{%
-%         \ifnum \c@secnumdepth >\m@ne
-%           \if@mainmatter
-%             \@chapapp\ \thechapter. \ %
-%           \fi
-%         \fi
-%         ##1}}}}
-% \fi
 
 \if@twoside
 \else
@@ -121,13 +67,11 @@ thesis class by BA]
 
 \RequirePackage{fancyhdr}
 \RequirePackage{calc}
-%% Updated for new version.  Might work with earlier 3.x versions, did
-%% not test.
 \RequirePackage{geometry}[2002/07/08]
 
 \if@twoside
-   \ClassWarning{polythesis}{Booooooo!!! Cannot (yet!) use two-sided
-   with PolyThesis!!!!} 
+   \ClassWarning{tandon_thesis}{Booooooo!!! Cannot (yet!) use two-sided
+   with tandon_thesis!!!!} 
 \else
  %% Page layout, from the pink booklet
  \advance\headheight by 2pt     % prevents annoying complaints about

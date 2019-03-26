@@ -1,19 +1,33 @@
-%\documentclass[12pt,letterpaper,oneside,final]{memoir}
-\documentclass[letterpaper]{polythesis}
+\documentclass[letterpaper]{tandon_thesis}
 \usepackage[medium]{titlesec}
 \usepackage{calc}
 \usepackage[subfigure]{ccaption}
 \usepackage{subfigure}
 \usepackage{tabularx}
 \usepackage{algorithm2e}
-\usepackage{url, cite, graphicx, amsmath, amsfonts, amsthm}
-%\usepackage{url, cite, graphicx, algorithmic, amsmath, amsfonts, amsthm}
-%\usepackage[chapter]{algorithm}
+\usepackage{url, graphicx, amsmath, amsfonts, amsthm}
 \usepackage{url}
 \usepackage{multirow}
+\usepackage{multicol}
 \usepackage{pifont}
 \usepackage{color}
 \usepackage{soul}
+\usepackage[backend=biber,style=ieee,sorting=nyt]{biblatex}
+
+\addbibresource{sample.bib}
+
+%   Credit for the following environment to @lockstep: https://tex.stackexchange.com/questions/10104/two-bibliographies-with-two-different-styles-in-the-same-document
+%   Print publications on the vita page without numbers.
+\defbibenvironment{nolabelbib}
+    {\list
+        {}
+        {\setlength{\leftmargin}{\bibhang}%
+         \setlength{\itemindent}{-\leftmargin}%
+         \setlength{\itemsep}{\bibitemsep}%
+         \setlength{\parsep}{\bibparsep}}}
+    {\endlist}
+    {\item}
+
 \newtheorem{condition}{Condition}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
@@ -128,31 +142,23 @@
 
 \frontmatter
 
-\title{Dissertation Title}
-\author{Author}
-
-\date{Month Year}
-
-\pagenumbering{roman}
-
-\maketitle
-
 {\setstretch{2}
+\include{cover}
 \include{title}
 \setcounter{page}{2}
-\include{Committee}}
-\include{micro}
+\include{committee}}
+\include{microfilm}
 
 \doublespacing
 
 \include{vita}
-\include{Acknowledgements}
-\include{Dedications}
+\include{acknowledgements}
+\include{dedications}
 
 %\vspace*{-20in}
 \onehalfspacing
 %\singlespacing
-\include{Abstract}
+\include{abstract}
 \doublespacing
 
 \renewcommand{\contentsname}{Table of Contents}
@@ -246,7 +252,5 @@
 \include{Conclusion/Conclusion}
 
 {\singlespace
-%% If you are using BibTeX
-\bibliographystyle{unsrt}
-\bibliography{ChapThree/References,ChapOne/References,ChapTwo/References}}
+\printbibliography}
 \end{document}
