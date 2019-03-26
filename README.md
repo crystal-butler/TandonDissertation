@@ -1,7 +1,16 @@
 # TandonDissertation
 An NYU Tandon School of Engineering Dissertation Template based on January 2016 guidelines: https://engineering.nyu.edu/sites/default/files/2018-07/phd-dissertation-guidelines-Jan2016-version_0.pdf.
 
-The tandon_thesis.cls class was originally named polythesis.cls. Here are the leading comments from polythesis.cls, which have now been removed:
+Major changes to the original on this fork include adding or revising the following pages to adhere to these guidelines:
+Front Cover
+Title Page
+Guidance Committee Signature Page
+Microfilm/Publishing Page
+Vita
+Abstract
+The bibliography package has been changed to biblatex, and an example bibliography file, sample.bib, has been added.
+
+The tandon_thesis.cls class was originally named polythesis.cls. Here are the leading comments from polythesis.cls, which have now been removed (included because they indicate original authorship):
 
 %% Time-stamp: <2004-04-27 18:44:11 Boris Aronov>
 %% File: polythesis.cls
