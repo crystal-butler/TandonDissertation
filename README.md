@@ -1,5 +1,5 @@
 # TandonDissertation
-An NYU Tandon School of Engineering Dissertation Template based on January 2016 guidelines: https://engineering.nyu.edu/sites/default/files/2018-07/phd-dissertation-guidelines-Jan2016-version_0.pdf.
+An NYU Tandon School of Engineering Dissertation template based on January 2016 guidelines: https://engineering.nyu.edu/sites/default/files/2018-07/phd-dissertation-guidelines-Jan2016-version_0.pdf.
 
 Major changes to the original on this fork include adding or revising the following pages to adhere to these guidelines:
 Front Cover
